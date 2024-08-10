@@ -7,10 +7,16 @@
 # Inherit from unicorn device
 $(call inherit-product, device/xiaomi/unicorn/device.mk)
 
-# Inherit from common lineage configuration
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_unicorn
+# Inherit from common DerpFest configuration
+TARGET_DISABLE_EPPE := true
+TARGET_USES_MINI_GAPPS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_BOOT_ANIMATION_RES := 1080
+DERP_BUILDTYPE := Official
+$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+
+PRODUCT_NAME := derp_unicorn
 PRODUCT_DEVICE := unicorn
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Xiaomi
